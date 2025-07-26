@@ -1,10 +1,9 @@
-# 🤖 RAG Chatbot with Streamlit & FLAN-T5
+# 📚 RAG Chatbot (Local FLAN-T5)
 
-A Retrieval-Augmented Generation (RAG) chatbot built using Streamlit and Google's FLAN-T5. Upload your documents and ask natural language questions — the bot reads your data and answers contextually.
+🔗 [Live Demo on Streamlit Cloud](https://rag-chatbot-app-8citezvaxq9gcwfpiuqzyx.streamlit.app/)
 
-> 🔥 Live Demo: [https://rag-chatbot-streamlit.streamlit.app](https://rag-chatbot-streamlit.streamlit.app)
+Upload a PDF, DOCX, or TXT file and ask questions about it — powered by local retrieval and the FLAN-T5 model.
 
----
 
 ## 📂 Features
 
