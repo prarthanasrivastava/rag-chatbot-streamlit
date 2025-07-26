@@ -10,6 +10,7 @@ transformers
 torch
 fpdf
 nest_asyncio
+faiss-cpu
 
 
 
