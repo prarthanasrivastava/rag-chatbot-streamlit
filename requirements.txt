@@ -9,6 +9,7 @@ sentence-transformers
 transformers
 torch
 fpdf
+nest_asyncio
 
 
 
