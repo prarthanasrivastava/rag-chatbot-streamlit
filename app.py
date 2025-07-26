@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 import streamlit as st
-import speech_recognition as sr
+
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 from langchain.text_splitter import CharacterTextSplitter
@@ -41,20 +41,7 @@ def extract_text_from_file(uploaded_file):
         text = stringio.read()
     return text
 
-def recognize_voice():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.toast("🎙 Listening... Speak now", icon="🎤")
-        audio = r.listen(source, timeout=5, phrase_time_limit=10)
-    try:
-        text = r.recognize_google(audio)
-        st.toast(f"✅ You said: {text}", icon="✅")
-        return text
-    except sr.UnknownValueError:
-        st.toast("❌ Could not understand audio", icon="❗")
-    except sr.RequestError as e:
-        st.toast(f"❌ Speech Recognition error: {e}", icon="⚠️")
-    return ""
+
 
 def generate_answer(question, context):
     input_text = f"Context: {context}\nQuestion: {question}\nAnswer:"
@@ -166,10 +153,8 @@ def main():
     with col1:
         query = st.text_input("💬 Ask a question:", placeholder="Type your question here...")
     with col2:
-        if st.button("🎙 Voice Input"):
-            voice_text = recognize_voice()
-            if voice_text:
-                query = voice_text
+     st.caption("🎙 Voice input is disabled on cloud.")
+
 
     if query:
         if "vectorstore" not in st.session_state or st.session_state.vectorstore is None:
