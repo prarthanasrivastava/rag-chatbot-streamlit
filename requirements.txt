@@ -5,12 +5,12 @@ python-docx
 langchain==0.2.1
 langchain-community
 langchain-huggingface
-sentence-transformers
 transformers
 torch
+sentence-transformers
 fpdf
-nest_asyncio
 faiss-cpu
+
 
 
 
